@@ -1,0 +1,44 @@
+Команды которые пишутся один раз на один Ноут или ПК
+    1) git config --global user.name "Your Name"
+    2) git config --global user.email "your@email"
+
+Команды которые пишутся один раз на проект
+    1) git init
+    2) git remote add origin ваша ссылка
+
+Команды которые пишутся часто
+    1) git status ---- показывает статус проекта
+    2) git add . ---- добавляет изменения в буфер
+    3) git commit -m "комментарий" ---- создает коммит ( Сохраняет изменения )
+    4) git branch ---- показывает ветки атак же показыввает текущую ветку
+    5) git push origin master ---- отправляет изменения на github
+    6) git branch name ---- создает ветку
+       git checkout -b name ---- создает ветку с текущей веткой
+    7) git checkout name ---- переключает на ветку
+
+Удаление папки с файлами
+    git rm -r .idea
+    git commit -m "Delete: уалили папку .idea"
+
+Команда гита для клонирования чужого Репозитория
+    git clone link
+
+
+Сооздаете файл
+    .gitignore
+
+# Создание виртуальной среды
+    python3    -
+    py         -  -m venv
+    python     -
+
+    source arzy/bin/activate - Linux - Mac
+    venv\Scripts\activate - Windows
+
+    deactivate venv - Linux,Mac,Windows
+
+Для слияния веток
+    git merge name ---- слияние ветки которую вы хотите сделать с текущей веткой
+    git pull origin name ---- слияние ветки которую вы хотите с текущей веткой
+
+
