@@ -49,7 +49,7 @@ def get_all_users():
 
 # Функция для поиска пользователя по имени
 def get_user_by_name(name):
-    cursor.execute('SELECT name, age, hobby FROM users WHERE name = ?', (name,))
+    cursor.execute('SELECT * FROM users WHERE name = ?', (name,))
     user = cursor.fetchall()
     if user:
         return f"NAME: {user[0][0]}, AGE: {user[0][1]}, HOBBY: {user[0][2]}"
@@ -58,4 +58,4 @@ def get_user_by_name(name):
 
 
 # Тест функции
-print(get_user_by_name('Алтынай'))
+print(get_user_by_name('Ардагер'))
