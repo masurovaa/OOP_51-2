@@ -1,9 +1,9 @@
 # Часть 1: Декоратор logger
 
 def logger(func):
-    def wrapper(*args, **kwargs):
-        print(f"Вызов функции: {func._name_} с аргументами: {args}")
-        return func(*args, **kwargs)  # Возвращаем результат функции
+    def wrapper(*args, ):
+        print(f"Вызов функции: {func.__name__} с аргументами: {args}")
+        return func(*args, )  # Возвращаем результат функции
 
     return wrapper
 
@@ -18,14 +18,14 @@ greet("Алиса")
 # Часть 2: Магические методы в классе Rectangle
 
 class Rectangle:
-    def _init_(self, width, height):
+    def __init__(self, width, height):
         self.width = width
         self.height = height
 
-    def _str_(self):
+    def __str__(self):
         return f"Прямоугольник {self.width}x{self.height}"
 
-    def _add_(self, other):
+    def __add__(self, other):
         if isinstance(other, Rectangle):
             return Rectangle(self.width + other.width, self.height + other.height)
         return NotImplemented
