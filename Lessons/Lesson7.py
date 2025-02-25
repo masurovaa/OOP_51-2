@@ -70,9 +70,10 @@ def add_grade(user_id, subject, grade):
 
 # JOIN
 
+#users.age, users.hobby - можно добавить другие столбцы
 def get_users_with_grades():
     cursor.execute('''
-        SELECT users.name, grades.subject, grades.grade
+        SELECT users.name, grades.subject, grades.grade 
          FROM users
          LEFT JOIN grades ON users.user_id = grades.user_id ''')
 
@@ -80,4 +81,17 @@ def get_users_with_grades():
     for i in users:
         print(f'NAME: {i[0]}, SUBJECT: {i[1]}, GRADE: {i[2]}')
 
-get_users_with_grades()
+#get_users_with_grades()
+
+
+''' HW7 - Функция для изменения оценки '''
+
+def update_grade(user_id, subject, new_grade):
+    cursor.execute('''
+        UPDATE grades SET grade = ? WHERE user_id = ? AND subject = ?
+         ''', (new_grade, user_id, subject))
+
+    connect.commit()
+    print(f'subject id updated !!')
+
+update_grade(4, 'Алгебра', 5)
